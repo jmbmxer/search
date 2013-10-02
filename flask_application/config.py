@@ -4,7 +4,7 @@ from flask.ext.mail import Mail
 
 class Config(object):
     basedir = os.path.abspath(os.path.dirname(__file__))
-    SECRET_KEY = 'bigFatSecretsf00Bar$1'
+    SECRET_KEY = ''
     SITE_NAME = 'The Search Collective'
     SITE_ROOT_URL = 'localhost:5000'
     MEMCACHED_SERVERS = ['localhost:11211']
@@ -18,7 +18,7 @@ class Config(object):
 
     # Stripe
 
-    SECRET_KEY= 'sk_test_wsjHditRLQ8BDh5FWBl1HHUB'
+    SECRET_KEY= ''
     #publishable_key = os.environ['PUBLISHABLE_KEY']
     PUBLISHABLE_KEY = 'pk_test_ilOGiFHlu0cP4oPxB2Jui5EH'
 
