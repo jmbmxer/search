@@ -1,0 +1,71 @@
+{% extends "bootstrap/layouts/base_navbar_responsive.html" %}
+
+
+{% block content %}
+
+
+<div class="subtitles">
+
+        <h1>Pricing & Plans</h1>
+
+</div>
+
+<div class="row">
+
+            <div class="span4 ">
+                <div class="pricing-table-header-tiny">
+                    <h3>Only $2.99 month</h3>
+                    <h3>Tiny</h3>
+                </div>
+                <div class="pricing-table-features">
+                    <p><strong>Unlimited</strong> Email Addresses</p>
+                    <p><strong>50GB</strong> Disk Space</p>
+                    <p><strong>Unlimited</strong> MySQL Databases</p>
+                    <p><strong>Unlimited</strong> Domains</p>
+                    <p><strong>Free</strong> Billing Systems</p>
+                </div>
+                <div class="pricing-table-signup-tiny">
+                  <p><a href="{{ url_for_security('register', level='small') }}">Sign Up</a></p>
+                </div>
+            </div>
+ <div class="span4">
+                <div class="pricing-table-header-small">
+                    <h3>Only $4.99 month</h3>
+                    <h3>Small</h3>
+                </div><div class="pricing-table-features">
+                    <p><strong>Unlimited</strong> Email Addresses</p>
+                    <p><strong>80GB</strong> Disk Space</p>
+                    <p><strong>Unlimited</strong> MySQL Databases</p>
+                    <p><strong>Unlimited</strong> Domains</p>
+                    <p><strong>Free</strong> Billing Systems</p>
+                </div>
+                <div class="pricing-table-signup-small">
+                  <p><a href="#">Sign Up</a></p>
+                </div>
+            </div>
+
+
+            <div class="span4">
+                <div class="pricing-table-header-medium">
+                    <h3>Only $9.99 month</h3>
+                    <h3>Medium</h3>
+                </div><div class="pricing-table-features">
+                    <p><strong>Unlimited </strong> Email Addresses</p>
+                    <p><strong>120GB</strong> Disk Space</p>
+                    <p><strong>Unlimited</strong> MySQL Databases</p>
+                    <p><strong>Unlimited</strong> Domains</p>
+                    <p><strong>Free</strong> Billing Systems</p>
+                </div>
+                <div class="pricing-table-signup-medium">
+                    <p><a href="#">Sign Up</a></p>
+                </div>
+            </div>
+
+
+         </div>
+            <div class="row-fluid">
+<p>A free plan is also available<a href="{{ url_for_security('register') }}">Here</a></p>
+</div>
+
+
+{% endblock %}

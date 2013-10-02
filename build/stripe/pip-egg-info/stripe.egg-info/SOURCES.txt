@@ -1,0 +1,14 @@
+MANIFEST.in
+VERSION
+setup.cfg
+pip-egg-info/stripe.egg-info/PKG-INFO
+pip-egg-info/stripe.egg-info/SOURCES.txt
+pip-egg-info/stripe.egg-info/dependency_links.txt
+pip-egg-info/stripe.egg-info/requires.txt
+pip-egg-info/stripe.egg-info/top_level.txt
+stripe/__init__.py
+stripe/importer.py
+stripe/version.py
+stripe/data/ca-certificates.crt
+stripe/test/__init__.py
+stripe/test/test_stripe.py

@@ -1,0 +1,19 @@
+{% from "security/_macros.html" import render_field_with_errors, render_field %}
+
+{% extends "security/index.html" %}
+
+{% block content %}
+  <h1>Search Group Management</h1>
+
+      <br/>
+       <form class ="form-inline"method="POST" action="">
+
+      Search Term: {{ form.group(placeholder="ex. Pumpkin Pie Recipies") }}
+      <form method= "POST" action = "{{ url_for('.generateurl' , group_to_generate = group.name) }}" value = test>
+      <button type="submit" class = "">Search your Group!</button>
+
+<h1>{{ goog_url }}</h1>
+
+</button>
+
+{% endblock %}

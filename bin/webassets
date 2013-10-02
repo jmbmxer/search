@@ -1,0 +1,9 @@
+#!/Users/jmesta/Desktop/side/flask_experiemts/thesearchcollective.org/bin/python
+# EASY-INSTALL-ENTRY-SCRIPT: 'webassets==0.8','console_scripts','webassets'
+__requires__ = 'webassets==0.8'
+import sys
+from pkg_resources import load_entry_point
+
+sys.exit(
+   load_entry_point('webassets==0.8', 'console_scripts', 'webassets')()
+)

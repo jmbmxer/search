@@ -1,0 +1,39 @@
+{% extends "bootstrap/layouts/base_navbar_responsive.html" %}
+
+
+{% block content %}
+
+<div class="hero-unit">
+  <h1 style="color:white">The Search Collective lets you easily create and store your own custom Google searches.</h1>
+  <h1><small style="color:grey">Take back control of the web.</small></h1><br />
+
+
+    <a class="btn btn-primary btn-large" href ="/auth/register" >
+      Sign Up
+    </a>
+  </p>
+</div>
+      <div class="row">
+
+      	  <div class="span4">
+          <h3 style="color:white">Create Collections</h3>
+          <img src="./static/img/groups.png" alt="create your collections" class="img-polaroid">
+           <p style="color:white">Create your own collections of websites for specific domains.  Great for researchers, professionals, or just about anyone needing to optimize and organize their Google searching. </p>
+          {#<p><a class="btn" href="#">View details &raquo;</a></p>#}
+       </div>
+        <div class="span4">
+          <h3 style="color:white">Add Websites</h3>
+          <img src="./static/img/links.png" alt="add websites" class="img-polaroid">
+           <p style="color:white">The Search Collective lets you create custom Google search queries based on websites that you know and trust. Giving you more confidence in your search results. </p>
+          {#<p><a class="btn" href="#">View details &raquo;</a></p>#}
+        </div>
+
+        <div class="span4">
+          <h3 style="color:white">Custom Search</h3>
+          <img src="./static/img/result.png" alt="search results" class="img-polaroid"><br />
+          <p style="color:white">The Search Collective uses Google's powerful site searching features to create curated search results. We are not in the business of re-inventing the search engine, just making it more personalized.</p>
+          {#<p><a class="btn" href="#">View details &raquo;</a></p>#}
+        </div>
+      </div>
+
+{% endblock %}

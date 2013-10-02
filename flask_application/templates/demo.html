@@ -1,0 +1,69 @@
+{% from "security/_macros.html" import render_field_with_errors, render_field %}
+
+{% extends "security/index.html" %}
+{% block content %}
+<div class="subtitles">
+Demo Search
+</div>
+
+<div class = "group-container well">
+<p><b>1.</b> Select the collection you would like to perform a search on.</p>
+ {#<a href="#" id="example" rel="popover" data-content="Recipes <ol><li> test1 </li></ol>" data-original-title="Demo Collections">hover for popover</a>#}
+<p><b>2. </b>Enter your search term and click "Search".</p>
+<p><b>3. </b>A new window will open with your custom Google search results! <i>Make sure you do not have popups blocked for this site.</i></p>
+<p><b>4. </b>A green button will also appear that will open your search results in a new tab.</p>
+</div>
+
+<div class = "group-container well">
+
+
+
+
+
+<form class - "form-inline" method= "POST" action = "" value = test>
+<select class="selectpicker span" name = grp>
+    {% for group in groups %}
+     <option value = '{{ group.name }}'>{{ group.name }}</option>
+    {% endfor %}
+</select>
+
+
+ <input type="text" class="form-inline span3" name = srch placeholder="Enter Search Query Here">
+<br />
+<input type="submit" class="btn btn-info btn-block" value="Search!"/>
+
+</form>
+</div>
+{% if final %}
+<div class = "subtitles">
+<script  type="text/javascript">
+
+         window.open( '{{ final }}' );
+
+</script>
+<a href=" {{ final }}  " target ="_newtab" class="btn btn-success btn-large"><i class="icon-white icon-ok"></i> Click to view your search results in a new tab</a>
+
+{% endif %}
+{% if output %}
+
+<p>{{ output }}</p>
+{% endif %}
+
+
+   {% for res in results %}
+   <p>hello?</p>
+      <p>{{ res.title }}</p>
+      <p>{{ res.desc }}</p>
+      <p>{{ res.url }}</p>
+   {% endfor %}
+
+
+</div>
+
+<script>
+$('.selectpicker').selectpicker({
+      style: 'btn-info',
+      size: 4
+  });
+</script>
+{% endblock %}

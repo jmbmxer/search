@@ -1,0 +1,20 @@
+{% from "security/_macros.html" import render_field_with_errors, render_field %}
+
+{% extends "security/index.html" %}
+{% block content %}
+  <h1>Welcome to Flask Basic member add link</h1>
+      <br/>
+    <h3>Your Groups</h3>
+
+   {% for link in links %}
+    <p>
+
+      <div id="wrapper">
+        <div class="container-fluid">
+          <h3>{{ links }}</h3>
+        </div>
+      </div>
+   </p>
+
+    {% endfor %}
+{% endblock %}

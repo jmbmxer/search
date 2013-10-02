@@ -1,0 +1,54 @@
+{% extends "bootstrap/layouts/base.html" %}
+
+{% block css_bootstrap %}
+    {{ super() }}
+    {# TODO: probably remove this and let the user set it manually? #}
+    <style>
+        body {
+            padding-top: 0px; /* 60px to make the container go all the way to the bottom of the topbar */
+        }
+    </style>
+{% endblock %}
+
+{% block navbar_wrapper %}
+<div class="container">
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="container">
+            {% block navbar_container %}
+                {#<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>#}
+               {% block navbar_links %}
+               <style>
+                .banner {
+                        font-family: 'Lobster', Georgia, Times, serif;
+                        font-size: 35px;
+                        line-height: 20px;
+                        text-decoration: none;
+
+                    }
+               </style>
+                    <a  class="banner" href="/">{{ config['SITE_NAME'] }}</a>
+                    {#<a href="/"><img src="/static/img/tsclogo2.png" alt="the search collective"></a>#}
+                    {#<a class="brand" href="/">{{ config['SITE_NAME'] }}</a>#}
+                    {# <div class="nav-collapse">
+                        <ul class="nav">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>#}
+                {% endblock %}
+                {% include "security/_menu.html" %}
+
+            {% endblock %}
+        </div>
+    </div>
+</div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+<ul class="nav nav-pills pull-right">
+
+
+  {% if current_user.has_role('admin') -%}
+  <li><a href="{{ url_for('admin.admin_page') }}">Admin</a></li>
+  {% endif -%}
+
+  {% if current_user.has_role('admin') or current_user.has_role('editor') -%}
+  <li><a href="{{ url_for('admin.admin_or_editor') }}">Admin or Editor</a></li>
+  {% endif -%}
+
+    {%- if current_user.is_authenticated() -%}
+      <li><a href="{{ url_for('frontend.generateurl') }}" style="color:white">Search</a></li>
+      <li><a href="{{ url_for('frontend.members') }}" style="color:white"> My Collections</a></li>
+
+        <li class="dropdown"><a href="#" class="dropdown " data-toggle="dropdown" style="color:white">Welcome, {{ current_user.username }}  <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ url_for_security('change_password') }}"><i class="glyphicon glyphicon-cog"></i> Change Password</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-envelope"></i> Contact</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{{ url_for_security('logout') }}" ><i class="glyphicon glyphicon-off"></i> Logout</a></li>
+                        </ul>
+
+                    </li>
+
+    {%- else -%}
+      {% if security.registerable %}
+          <li><a href="{{ url_for('frontend.generateurldemo') }}" style="color:white">Demo</a></li>
+           <li><a href="{{ url_for_security('register') }}" style="color:white">Register</a></li>
+          {#<li><a href="{{ url_for('pricing') }}">Pricing & Plans</a></li>#}
+      {% endif %}
+      <li>
+          <a href="{{ url_for_security('login') }}" style="color:white">Login</a>
+      </li>
+
+    {%- endif -%}
+</ul>

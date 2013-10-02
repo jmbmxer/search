@@ -1,0 +1,55 @@
+{% from "security/_macros.html" import render_field_with_errors, render_field %}
+
+{% extends "security/index.html" %}
+{% block content %}
+<div class="subtitles">
+Perform a search
+</div>
+<div class = "group-container well">
+<p>Select the collection you would like to perform a search on from the dropdown menu below, enter the term you would like to search, then click Search!</p><p> A green button will appear below that will take you to the Google search results.</p>
+
+
+
+
+<form class - "form-inline" method= "POST" action = "" value = test>
+<select class="selectpicker span" name = grp>
+    {% for group in groups %}
+     <option value = '{{ group.name }}'>{{ group.name }}</option>
+    {% endfor %}
+</select>
+
+
+ <input type="text" class="form-inline span3" name = srch>
+<br />
+<input type="submit" class="btn btn-info btn-block" value="Search!"/>
+
+</form>
+</div>
+{% if final %}
+<div class = "subtitles">
+<a href=" {{ final }}  " target ="_newtab" class="btn btn-success btn-large"><i class="icon-white icon-ok"></i> Click to view your search results</a><p>[Google results will open in a new tab.]</p>
+
+{% endif %}
+{% if output %}
+
+<p>{{ output }}</p>
+{% endif %}
+
+
+   {% for res in results %}
+   <p>hello?</p>
+      <p>{{ res.title }}</p>
+      <p>{{ res.desc }}</p>
+      <p>{{ res.url }}</p>
+   {% endfor %}
+
+
+</div>
+
+<script>
+$('.selectpicker').selectpicker({
+      style: 'btn-info',
+      size: 4
+  });
+</script>
+{% endblock %}
