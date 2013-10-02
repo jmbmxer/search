@@ -9,7 +9,11 @@ class Config(object):
     SITE_ROOT_URL = 'localhost:5000'
     MEMCACHED_SERVERS = ['localhost:11211']
     SYS_ADMINS = ['jimmy@jimmymesta.com']
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'test.db')
+    if os.environ.get('DATABASE_URL') is None:
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
+    else:
+    SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
+    #SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'test.db')
     SECURITY_POST_LOGIN_VIEW= '/search'
 
     # Stripe
